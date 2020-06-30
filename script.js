@@ -23,7 +23,8 @@ function trovaMese(data) {
       year: data.year()
     });
     var context = {
-      date: giornoCorrente.format('D MMMM')
+      date: giornoCorrente.format('D MMMM'),
+      day: giornoCorrente.format('YYYY MMMM DD')
     };
     var html = template(context);
 
@@ -49,7 +50,7 @@ function trovaFestivita(data) {
         $('.day').each(function() {
           var questoGiorno = $(this).attr('data-day');
           if (questoGiorno === festivitaCorrente.date) {
-            $(this).addClass('.red');
+            $(this).addClass('red');
             $(this).append('(' + festivitaCorrente.name + ')')
           }
         })
