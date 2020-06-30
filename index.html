@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <title></title>
+  </head>
+  <body>
+
+    <div class="container">
+      <h2 id="mese"></h2>
+      <ul id="lista-giorni">
+      </ul>
+    </div>
+
+
+    <script id="calendario" type="text/x-handlebars-template">
+      <li data-day="{{day}}">{{date}}</li>
+    </script>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
