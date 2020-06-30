@@ -8,6 +8,16 @@ $(document).ready(function() {
   trovaMese(data);
   trovaFestivita(data);
 
+  $(document).on('click', '#next',
+  function() {
+    var mese = $('#mese').attr('data-month');
+    var meseMoment = moment(mese);
+    var meseNext = meseMoment.add(1, 'months');
+
+    trovaMese(meseNext);
+    trovaFestivita(meseNext);
+  });
+});
 
 // *************FUNZIONI***************
 function trovaMese(data) {
@@ -31,7 +41,6 @@ function trovaMese(data) {
     $('#lista-giorni').append(html);
   };
 };
-});
 
 function trovaFestivita(data) {
   $.ajax(
@@ -46,7 +55,6 @@ function trovaFestivita(data) {
       var festivita = dataResponse.response;
       for (var i = 0; i < festivita.length; i++) {
         var festivitaCorrente = festivita[i];
-
         $('.day').each(function() {
           var questoGiorno = $(this).attr('data-day');
           if (questoGiorno === festivitaCorrente.date) {
